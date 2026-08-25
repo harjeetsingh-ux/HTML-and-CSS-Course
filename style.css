@@ -1,4 +1,6 @@
-/* General Styling */
+/* =========================
+   General Styling
+========================= */
 
 * {
     margin: 0;
@@ -6,17 +8,24 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f8f8;
     color: #333;
+    line-height: 1.6;
 }
 
 
-/* Header */
+/* =========================
+   Header
+========================= */
 
 header {
-    background-color: #222;
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 50px 20px;
@@ -29,66 +38,143 @@ header h1 {
 }
 
 header p {
-    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 300;
 }
 
 
-/* Navigation */
+/* =========================
+   Navigation
+========================= */
 
 nav {
-    background-color: #333;
-    text-align: center;
+    background-color: #222;
     padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 18px;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #ffd700;
+    color: #f4b400;
 }
 
 
-/* Main Container */
+/* =========================
+   Hero Section
+========================= */
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 40px auto;
-}
+.hero {
+    min-height: 450px;
 
-.container h2 {
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 30px;
-}
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1498837167922-ddd27525d352");
 
+    background-size: cover;
+    background-position: center;
 
-/* Cards */
-
-.card-container {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+.button {
+    display: inline-block;
+
+    background-color: #f4b400;
+    color: #222;
+
+    padding: 12px 25px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   Recipes Section
+========================= */
+
+.recipes {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 20px;
+}
+
+.recipes > h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+
+/* Recipe Cards */
+
+.recipe-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-.card {
+.recipe-card {
     background-color: white;
-    width: 300px;
-    padding: 25px;
-    text-align: center;
-    border-radius: 10px;
+    width: 350px;
 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 
     transition:
         transform 0.4s ease,
@@ -98,108 +184,148 @@ nav a:hover {
 
 /* Card Hover Effect */
 
-.card:hover {
-    transform: translateY(-12px) scale(1.03);
+.recipe-card:hover {
+    transform: translateY(-10px);
 
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 
-/* Images */
+/* Recipe Images */
 
-.card img {
+.recipe-card img {
     width: 100%;
-    height: 180px;
+    height: 230px;
+
     object-fit: cover;
-    border-radius: 8px;
 
     transition: transform 0.4s ease;
 }
 
-.card:hover img {
+.recipe-card:hover img {
     transform: scale(1.05);
 }
 
 
-/* Card Headings */
+/* Recipe Content */
 
-.card h3 {
+.recipe-content {
+    padding: 25px;
+}
+
+.recipe-content h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin: 15px 0 10px;
+    font-size: 27px;
+    margin-bottom: 10px;
 }
 
-
-/* Card Paragraph */
-
-.card p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    font-weight: 400;
-}
-
-
-/* Buttons */
-
-.btn {
-    display: inline-block;
-
+.recipe-content h4 {
     margin-top: 20px;
-    padding: 10px 22px;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
 
-    background-color: #222;
+.recipe-content p {
+    font-size: 15px;
+}
+
+.recipe-content ul {
+    padding-left: 20px;
+}
+
+.recipe-content li {
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   About Section
+========================= */
+
+.about {
+    background-color: #333;
     color: white;
-
-    text-decoration: none;
-    border-radius: 5px;
-
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    padding: 70px 20px;
 }
 
-.btn:hover {
-    background-color: #ffd700;
-    color: #222;
-    transform: scale(1.08);
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.about p {
+    font-size: 16px;
+    margin-bottom: 18px;
+    font-weight: 300;
 }
 
 
-/* Footer */
+/* =========================
+   Contact Section
+========================= */
+
+.contact {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #f4f4f4;
+}
+
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   Footer
+========================= */
 
 footer {
-    margin-top: 50px;
-
     background-color: #222;
     color: white;
 
     text-align: center;
+
     padding: 20px;
 
-    font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
 
 
-/* Responsive Design */
+/* =========================
+   Responsive Design
+========================= */
 
 @media (max-width: 768px) {
 
     header h1 {
-        font-size: 36px;
+        font-size: 38px;
     }
 
-    .card {
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .recipe-card {
         width: 100%;
+        max-width: 400px;
     }
 
     nav a {
         display: inline-block;
-        margin: 8px;
+        margin: 6px 10px;
     }
 }
